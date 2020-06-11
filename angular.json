@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-mvc"
+    }
+  },
+  "defaultProject": "angular-mvc",
+  "cli": {
+    "analytics": false
+  }
 }
