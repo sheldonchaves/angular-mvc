@@ -40,11 +40,13 @@ jobs:
         uses: mujo-code/puppeteer-headful@master
         env:
           CI: "true"
+      - name: remove screenshots
+        run: rm -rf ./screenshots
       - name: screenshots-ci-action
         uses: flameddd/screenshots-ci-action@v1.0.4
         with:
           url: https://sheldonchaves.github.io/angular-mvc/
-          devices: iPhone 11,iPad Pro landscape
+          devices: iPhone X landscape,iPad,Pixel 2 XL landscape,iPad Pro landscape, iPad Pro
           noDesktop: true
       - uses: actions/upload-artifact@v1
         with:
