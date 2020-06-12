@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+    tags:
+      - "*"
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -43,6 +45,7 @@ jobs:
         with:
           url: https://sheldonchaves.github.io/angular-mvc/
           devices: iPhone 11,iPad Pro landscape
+          noDesktop: true
       - uses: actions/upload-artifact@v1
         with:
           name: Download-screenshots
