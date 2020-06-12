@@ -29,3 +29,20 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: dist
+  screenshots:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install puppeteer-headful
+        uses: mujo-code/puppeteer-headful@master
+        env:
+          CI: "true"
+      - name: screenshots-ci-action
+        uses: flameddd/screenshots-ci-action@v1.0.4
+        with:
+          url: https://sheldonchaves.github.io/angular-mvc/
+          devices: iPhone 11,iPad Pro landscape
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Download-screenshots
+          path: screenshots
