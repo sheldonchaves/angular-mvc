@@ -54,9 +54,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: [screenshots]
     steps:
-      - uses: actions/checkout@v1
-      - uses: ncipollo/release-action@v1
-        with:
-          artifacts: "screenshots"
-          bodyFile: "body.md"
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
