@@ -52,8 +52,8 @@ jobs:
           path: screenshots
       # - name: switching from HTTPS to SSH
       #   run: git remote set-url origin ${{ secrets.ssh }}
-      - name: check for changes
-        run: git status
+      - name: setup
+        run: git config --global user.email "sheldonchaves@gmail.com" && git config --global user.name "Sheldon Menezes Chaves"
       - name: stage changed files
         run: git add .
       - name: commit changed files
