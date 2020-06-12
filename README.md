@@ -1,3 +1,5 @@
+![Build and Deploy](https://github.com/sheldonchaves/angular-mvc/workflows/Build%20and%20Deploy/badge.svg)
+
 # AngularMvc
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
