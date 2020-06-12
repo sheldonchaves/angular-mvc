@@ -46,7 +46,7 @@ jobs:
         uses: flameddd/screenshots-ci-action@v1.0.4
         with:
           url: https://sheldonchaves.github.io/angular-mvc/
-          devices: iPhone X landscape,iPad,Pixel 2 XL landscape,iPad Pro landscape, iPad Pro
+          devices: iPhone X landscape,iPhone X,iPad,Pixel 2 XL landscape,iPad Pro landscape, iPad Pro
           noDesktop: true
       - uses: actions/upload-artifact@v1
         with:
