@@ -31,7 +31,7 @@
 
 ### About github project
 
-Exemple of project using github actions to build, deploy on gh-pages, create screenshots and commit in repository.
+Example of project using github actions to build, deploy on gh-pages, create screenshots and commit in repository.
 
 ***
 
