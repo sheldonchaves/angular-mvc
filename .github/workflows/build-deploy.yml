@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - master
-    tags:
-      - "*"
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -24,8 +22,7 @@ jobs:
       - name: Build
         run: |
           npm install
-          npm run-script deploy
-          # npm run-script deploy
+          ng build --prod --base-href https://sheldonchaves.github.io/angular-mvc/ --output-path=dist
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
@@ -53,14 +50,12 @@ jobs:
         with:
           name: Download-screenshots
           path: screenshots
-      # - name: switching from HTTPS to SSH
-      #   run: git remote set-url origin ${{ secrets.ssh }}
       - name: setup
         run: git config --global user.email "sheldonchaves@gmail.com" && git config --global user.name "Sheldon Menezes Chaves"
       - name: stage changed files
         run: git add .
       - name: rename all
-        run: cd screenshots && find . -name '*png' -exec bash -c 'mv $0 ${0/-*/.png}' {} \;
+        run: find ./screenshots -name '*png' -exec bash -c 'mv $0 ${0/-*/.png}' {} \;
       - name: commit changed files
         run: git commit -m "Auto updating screenshots"
       - name: fetch from master
