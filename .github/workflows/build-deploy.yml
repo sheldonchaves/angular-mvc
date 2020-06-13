@@ -11,4 +11,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: rename all
-        run: find ./screenshots/ -name '*.png' -exec bash -c 'mv $0 ${0/-*/.png}' {} \;
+        run: find ./screenshots/ -name '*.png' -exec bash -c 'echo $0 ${0/-*/.png}' {} \;
