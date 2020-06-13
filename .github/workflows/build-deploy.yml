@@ -21,7 +21,7 @@ jobs:
             ${{ runner.os }}-node-
       - name: Build
         run: |
-          npm install
+          npm install && npm install -g @angular/cli
           ng build --prod --base-href https://sheldonchaves.github.io/angular-mvc/ --output-path=dist
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
